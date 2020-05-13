@@ -1,0 +1,106 @@
+
+        
+            <html>
+              <head>
+                  <title>Assignment</title>
+              </head>
+              <body>
+                  <h2>Assignment</h2>
+                  <!-- First Question -->
+                  <p id="showMax"></p>
+                  <!-- Second Question -->
+                  <div>
+                      <p id="showNameHere"></p>
+                      <button onclick="showName()">Click me to see my name</button>
+                  </div>
+                  <!-- Third Question -->
+                  <div>
+                      <p id="hiddenName" style="display:none">Hidden Name: Menesh</p>
+                      <button onclick="showHiddenName()">Show hidden name</button>
+                  </div>
+                  <!-- Fourth Question -->
+                  <div>
+                      <p id="changeFont" style="font-size: 4px;">Menesh</p>
+                      <button onclick="changeNameFont()">Change Font size</button>
+                  </div>
+                  <!-- Fifth Question -->
+                  <div>
+                      <p id="showDateTime"></p>
+                      <button onclick="showDateTime()">Show date and time</button>
+                  </div>
+                  <!-- Sixth Question -->
+                  <div>
+                      <p id="copyText"></p>
+                      <label for="firstInput"></label><input id="firstInput" type="text">
+                      <label for="secondInput"></label><input id="secondInput" type="text">
+                      <button onclick="copyText()">Copy Text</button>
+                  </div>
+                  <!-- Seventh Question -->
+                  <p id="sortedArray"></p>
+                  <!-- Eighth Question -->
+                  <p id="descendingNames"></p>
+                  <!-- Nineth Question -->
+                  <p id="checkEmail"></p>
+                  <!-- Tenth Question -->
+                  <p id="checkMobile"></p>
+                  <!-- Eleventh Question -->
+                  <p id="getRandomNumber"></p>
+              </body>
+              <script>
+                  // First Question
+          
+                  const  arr = [23,78, 34, 89, 45, 14, 67, 55, 39, 21];
+                  const max = Math.max(...arr);
+                  document.getElementById('showMax').innerHTML = 'Max number in array: ' + max;
+          
+                  //Second Question
+                  function showName() {
+                      document.getElementById('showNameHere').innerHTML = 'Menesh';
+                  }
+          
+                  //Third Question
+                  function showHiddenName() {
+                      document.getElementById('hiddenName').style.display = 'block';  
+                  }
+          
+                  //Fourth Question
+                  function changeNameFont() {
+                      document.getElementById('changeFont').style.fontSize = '7px';  
+                  }
+          
+                  //Fifth Question
+                  function showDateTime() {
+                      const date = new Date();
+                      document.getElementById('showDateTime').innerHTML =  date.toString();
+                  }
+          
+                  //sixth Question
+                  function copyText() {
+                      const value = document.getElementById('firstInput').value;
+                      document.getElementById('secondInput').value = value;
+                  }
+          
+                  //Seventh Question
+                  let sortedArray = arr.sort((a,b) => a-b);
+                  document.getElementById('sortedArray').innerHTML = 'The sorted array is: ' + sortedArray.join(" ");
+          
+                  //Eighth Question
+                  let names = ['Menesh', 'Kamlesh', 'Guddu', 'Saurabh', 'Yugal']
+                  document.getElementById('descendingNames').innerHTML = 'The names in descending order is: ' + names.reverse().join(", ");
+          
+                  //Nineth Question
+                  const email = 'abc@test.com';
+                  document.getElementById('checkEmail').innerHTML = 'Is @ present in  email: ' +  email.includes("@");
+          
+                   //Tenth Question
+                   const mobile = '1234567890';
+                   const length = mobile.length == 10;
+                  document.getElementById('checkMobile').innerHTML = 'Is mobile number 10 digits long: ' +  length;
+          
+                  //Eleventh Question
+                  document.getElementById('getRandomNumber').innerHTML = 'Any random  number between 0 to 1: ' +  Math.random();;
+          
+          
+          
+              </script>
+          </html>
